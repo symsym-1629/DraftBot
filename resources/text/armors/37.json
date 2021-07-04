@@ -4,7 +4,9 @@
 		"en": ":shield:  **Geneva Conventions**"
 	},
 	"rarity": 7,
-  "rawDefense": 10,
-  "attack": -40,
-  "defense": 20
+	"rawDefense": 10,
+	"attack": -40,
+	"defense": 20,
+	"french_masculine": 0,
+	"french_plural": 1
 }

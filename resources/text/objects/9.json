@@ -4,6 +4,8 @@
 		"en": ":key2: **Rusty key**"
 	},
 	"rarity": 1,
-	"power": 3,
-	"nature": 6
+	"power": 25,
+	"nature": 6,
+	"french_masculine": 0,
+	"french_plural": 0
 }
