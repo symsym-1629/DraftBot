@@ -184,7 +184,7 @@ class Fight {
 					return user.id === playingId;
 				};
 
-				const collector = message.createReactionCollector(filter, {time: 30000});
+				const collector = message.createReactionCollector(filter, {time: 120000});
 
 				collector.on('collect', async (reaction) => {
 					switch (reaction.emoji.name) {
