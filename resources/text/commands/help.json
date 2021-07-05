@@ -19,12 +19,6 @@
 			"aliasFieldTitle": "Alias",
 			"aliasesFieldTitle": "Alias",
 			"commands": {
-				"prefix": {
-					"emote": ":interrobang:",
-					"usage": "prefix [Nouveau préfixe]",
-					"category": "server",
-					"description": "Permet, si vous êtes administrateur sur un serveur, de changer le préfixe utilisé par le bot."
-				},
 				"ping": {
 					"emote": ":ping_pong:",
 					"usage": "ping",
@@ -55,12 +49,6 @@
 					"category": "util",
 					"description": ":expressionless:"
 				},
-				"language": {
-					"emote": ":flag_gb:",
-					"usage": "language",
-					"category": "server",
-					"description": "Change la langue utilisée par le bot pour l'anglais. Utilisable si vous êtes administrateur sur un serveur."
-				},
 				"top": {
 					"emote": ":trophy:",
 					"usage": "top [numéro de page]",
@@ -73,12 +61,6 @@
 					"category": "player",
 					"description": "Affiche le contenu de votre inventaire qui peut contenir 4 types d'objets :\n```\n-armes\n-armures\n-potions\n-items\n```\nLa commande affiche également le contenu de la réserve qui peut contenir un second objet de type item le temps que vous décidiez si vous le conservez ou non.\n\n:warning: **La réserve n'est pas un endroit sûr pour conserver un objet précieux !**\nLes objets en réserve peuvent être remplacés automatiquement par un nouvel objet quand vous en trouvez un."
 				},
-				"report": {
-					"emote": ":newspaper:",
-					"usage": "report",
-					"category": "player",
-					"description": "Permet de collecter les informations et les ressources collectées par votre personnage durant votre absence. De temps en temps, des évenements se déclenchent et demandent des actions particulières."
-				},
 				"invite": {
 					"emote": ":inbox_tray:",
 					"usage": "invite",
@@ -90,84 +72,6 @@
 					"usage": "badge",
 					"category": "util",
 					"description": "Les badges sont des distinctions très difficiles à obtenir qui ont été crées pour récompenser les personnes ayant le plus soutenu le développement du bot. La liste des badges est disponible sur le discord du bot. (utilisez la commande `invite` pour en obtenir le lien)"
-				},
-				"drink": {
-					"emote": ":tropical_drink:",
-					"usage": "drink",
-					"category": "player",
-					"description": "Cette commande permet de consommer la potion que vous transportez. Certaines potions ne peuvent pas être bues et sont consommées automatiquement lors d'un combat."
-				},
-				"shop": {
-					"emote": ":shopping_cart:",
-					"usage": "shop",
-					"category": "player",
-					"description": "Cette commande permet de dépenser votre argent pour faciliter votre aventure. En plus des 4 choix de base qui seront disponible de façon permanente, vous pourrez, chaque jour, profiter d'une potion exclusive, disponible à la vente durant 24 heures uniquement."
-				},
-				"guildcreate": {
-					"emote": ":pencil:",
-					"usage": "guildcreate [Nom de guilde]",
-					"category": "guild",
-					"description": "Permet de créer une guilde. Créer une guilde coûte 5000 :moneybag:."
-				},
-				"guildleave": {
-					"emote": ":outbox_tray:",
-					"usage": "guildleave",
-					"category": "guild",
-					"description": "Permet de quitter votre guilde."
-				},
-				"guild": {
-					"emote": ":stadium:",
-					"usage": "guild [nom de guilde ou mention]",
-					"category": "guild",
-					"description": "Permet d'afficher les informations sur une guilde."
-				},
-				"guilddaily": {
-					"emote": ":newspaper:",
-					"usage": "guildaily",
-					"category": "guild",
-					"description": "Permet de récupérer des récompenses quotidiennes de guildes."
-				},
-				"guildkick": {
-					"emote": ":leg:",
-					"usage": "guildkick [mention]",
-					"category": "guild",
-					"description": "Permet d'expulser un membre d'une guilde, nécessite d'être chef de guilde."
-				},
-				"guildadd": {
-					"emote": ":incoming_envelope:",
-					"usage": "guildadd [mention]",
-					"category": "guild",
-					"description": "Permet d'ajouter un utilisateur à une guilde, nécessite d'être chef de guilde."
-				},
-				"guilddesc": {
-					"emote": ":writing_hand:",
-					"usage": "guilddesc [description]",
-					"category": "guild",
-					"description": "Permet de modifier la description de la guilde, nécessite d'être chef de guilde."
-				},
-				"guildelder": {
-					"emote": ":military_medal:",
-					"usage": "guildelder [mention]",
-					"category": "guild",
-					"description": "Permet d'ajouter un ainé à la guilde, nécessite d'être chef de guilde."
-				},
-				"guildelderremove": {
-					"emote": ":outbox_tray:",
-					"usage": "guildelderremove",
-					"category": "guild",
-					"description": "Permet de supprimer l'ainé de la guilde, nécessite d'être chef de guilde."
-				},
-				"guildstorage": {
-					"emote": ":pencil:",
-					"usage": "guildstorage",
-					"category": "guild",
-					"description": "Affiche le contenu de l'entrepôt de la guilde."
-				},
-				"guildshop": {
-					"emote": ":shopping_cart:",
-					"usage": "guildshop",
-					"category": "guild",
-					"description": "Affiche le magasin de votre guilde."
 				},
 				"update": {
 					"emote": ":scroll:",
@@ -186,48 +90,6 @@
 					"usage": "mypet",
 					"category": "pet",
 					"description": "Affiche les informations relatives à votre familier."
-				},
-				"pettransfer": {
-					"emote": ":arrow_right:",
-					"usage": "pettransfer [numéro]",
-					"category": "pet",
-					"description": "Permet de transférer un familier depuis ou vers la guilde. Si aucun numéro n'est fournit, le familier de votre inventaire sera déplacé vers le refuge de la guilde. Si un numéro est fournit, il sera échangé avec celui de la guilde correspondant au numéro."
-				},
-				"petnickname": {
-					"emote": ":abcd:",
-					"usage": "petnickname [nom]",
-					"category": "pet",
-					"description": "Change le surnom de votre familier. Si aucun nom n'est fournit, le nom actuel sera effacé."
-				},
-				"petfree": {
-					"emote": ":wave:",
-					"usage": "petfree",
-					"category": "pet",
-					"description": "Libère votre familier. Attention, une fois libéré, il sera effacé à tout jamais et donc impossible de le récupérer. Cette commande ne peut être effectuée qu'une fois par heure."
-				},
-				"shelter": {
-					"emote": ":park:",
-					"usage": "shelter",
-					"category": "pet",
-					"description": "Affiche le refuge d'animaux de la guilde."
-				},
-				"pettrade": {
-					"emote": ":scales:",
-					"usage": "pettrade [mention]",
-					"category": "pet",
-					"description": "Propose un échange de vos animaux avec la personne mentionnée."
-				},
-				"petfeed": {
-					"emote": ":candy:",
-					"usage": "petfeed",
-					"category": "pet",
-					"description": "Donner de la nourriture à votre familier."
-				},
-				"petsell": {
-					"emote": ":dollar:",
-					"usage": "petsell <price>",
-					"category": "pet",
-					"description": "Permet de vendre un familier. Les conditions suivantes s'appliquent : \n - le prix du vente doit être être supérieur à `100💰` et inférieur à `10000💰`. \n- Le vendeur ne gagnera pas d'argent lors de la transaction, mais de l'expérience de guilde. \n- Le vendeur et l'acheteur ne peuvent pas faire partie de la même guilde."
 				},
 				"classstats": {
 					"emote": ":bookmark:",
@@ -258,12 +120,6 @@
 					"usage": "dmnotification",
 					"category": "util",
 					"description": "Permet d'activer ou de désactiver les notifications du bot."
-				},
-				"unlock": {
-					"emote":":unlock:",
-					"usage": "unlock [mention]",
-					"category": "player",
-					"description": "Permet de payer une caution pour libérer quelqu'un de prison."
 				},
 				"map": {
 					"emote":":map:",

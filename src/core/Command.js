@@ -16,7 +16,6 @@ class Command {
 
 		const folders = [
 			"src/commands/admin",
-			"src/commands/guild",
 			"src/commands/player",
 			"src/commands/pets",
 		];
