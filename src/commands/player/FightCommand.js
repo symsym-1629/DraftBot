@@ -11,6 +11,10 @@ const FightCommand = async function (language, message, args, friendly = false) 
 	let attacker;
 	[attacker] = await Entities.getOrRegister(message.author.id);
 
+	if(friendly){
+		return;
+	}
+
 	if ((await canPerformCommand(message, language, PERMISSION.ROLE.ALL, [EFFECT.BABY, EFFECT.DEAD], attacker)) !== true) {
 		return;
 	}

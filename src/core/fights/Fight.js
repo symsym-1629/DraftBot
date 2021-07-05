@@ -130,10 +130,11 @@ class Fight {
 			maxTurn: FIGHT.MAX_TURNS,
 			time: minutesToString(millisecondsToMinutes(new Date().getTime() - this.message.createdTimestamp))
 		});
-		if (this.elo !== 0) {
+		if (this.elo !== 0 && loser.power !== winner.power) {
 			msg += format(JsonReader.commands.fight.getTranslation(this.language).end.elo, {
 				elo: this.elo,
-				points: this.points
+				points: this.points,
+				winpoints : this.points*2
 			});
 		}
 		for (let i = 0; i < this.fighters.length; ++i) {
@@ -431,18 +432,9 @@ class Fight {
 		// give and remove points if the fight is not a draw
 		if (loser != null && loser.power !== winner.power) {
 			loser.entity.Player.addScore(-this.points);
-			loser.entity.Player.addWeeklyScore(-this.points);
 			loser.entity.Player.save();
-			winner.entity.Player.addScore(this.points);
-			winner.entity.Player.addWeeklyScore(this.points);
+			winner.entity.Player.addScore(this.points * 2);
 			winner.entity.Player.save();
-		}
-
-		if (!this.friendly && !this.tournamentMode) {
-			for (let i = 0; i < this.fighters.length; i++) {
-				this.fighters[i].entity.fightPointsLost = await this.fighters[i].entity.getMaxCumulativeHealth() - this.fighters[i].power;
-				this.fighters[i].entity.save();
-			}
 		}
 		for (let i = 0; i < this.fighters.length; i++) {
 			global.removeBlockedPlayer(this.fighters[i].entity.discordUser_id);
