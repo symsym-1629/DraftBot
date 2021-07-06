@@ -80,7 +80,7 @@ const FightCommand = async function (language, message, args, friendly = false) 
 				};
 			}
 
-			const collector = messageFightAsk.createReactionCollector(filter, { time: 60000 });
+			const collector = messageFightAsk.createReactionCollector(filter, { time: 60000, max : 1 });
 
 			collector.on('collect', async (reaction, user) => {
 				switch (reaction.emoji.name) {

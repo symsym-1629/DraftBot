@@ -26,11 +26,11 @@
 			},
 			"error": {
 				"spamCanceled": "Votre combat a été annulé. Merci de ne pas spam la réaction de votre demande de combat.",
-				"noOneAvailable": "Malheureusement, personne ne semble disponible pour combattre sur ce serveur. Votre demande de combat a été annulée.",
+				"noOneAvailable": "MODE TOURNOI : Votre demande de combat a été fermée car elle a été acceptée ou qu'un joueur a interagi avec.",
 				"opponentNotAvailable": "Malheureusement, cette personne ne semble pas disponible pour le moment. Votre demande de combat a été annulée.",
 				"fightHimself": "Il est impossible de se combattre soi-même ! Trouvez un autre adversaire.",
 				"canceled": "Votre demande de combat a bien été annulée.",
-				"onlyInitiator": " {pseudo}, seul l'initiateur d'un combat peut l'annuler !",
+				"onlyInitiator": "Attention, fermer les demandes de combats d'autres participants peut mener à votre exclusion en cas de récidive !",
 				"levelTooLow": {
 					"direct": "{pseudo}, vous devez être **LVL {level}** pour accéder aux combats ! Revenez plus tard !",
 					"indirect": "Cet adversaire n'a pas encore atteint le **LVL {level}** et ne peut donc pas combattre !"
