@@ -101,16 +101,17 @@ const FightCommand = async function (language, message, args, friendly = false) 
 							defender = null;
 							return;
 						}
-
-						const [fightLimiter] = await FightLimiter.getOrRegister(user.id, attacker.discordUser_id);
+						let fightLimiter;
+						[fightLimiter] = await FightLimiter.getOrRegister(user.id, attacker.discordUser_id);
 						console.log("nombre actuel : " + fightLimiter.amount);
+
 						if (fightLimiter.amount > 2) {
 							await sendErrorMessage(user, message.channel, language, "Vous avez épuisé tous vos combats avec cet adversaire.");
 							return;
 						}
 
-						fightLimiter.amount ++;
-						fightLimiter.save();
+						fightLimiter.amount++;
+						await fightLimiter.save();
 
 						console.log("nombre actuel : " + fightLimiter.amount);
 						fightInstance = new Fight(attacker, defender, message, language, isTournament, isTournament ? tournamentPower : -1, friendly);

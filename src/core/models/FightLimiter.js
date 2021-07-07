@@ -10,13 +10,16 @@ module.exports = (Sequelize, DataTypes) => {
 	const FightLimiter = Sequelize.define(
 		'FightLimiter',
 		{
+			id: {
+				type: DataTypes.INTEGER,
+				primaryKey: true,
+				autoIncrement: true,
+			},
 			smallid: {
 				type: DataTypes.INTEGER,
-				primaryKey: true
 			},
 			bigid: {
 				type: DataTypes.INTEGER,
-				primaryKey: true
 			},
 			amount: {
 				type: DataTypes.INTEGER,
@@ -45,24 +48,6 @@ module.exports = (Sequelize, DataTypes) => {
 	 * @param {Number} idplayerone
 	 * @param {Number} idplayertwo
 	 */
-	FightLimiter.getAmount = async (idplayerone, idplayertwo) => {
-		const {Op} = require("sequelize");
-		if (idplayerone > idplayertwo) {
-			let temp = idplayerone;
-			idplayerone = idplayertwo;
-			idplayertwo = temp;
-		}
-		return await FightLimiter.findOne({
-			where: {
-				[Op.and]: [{smallid: idplayerone}, {bigid: idplayertwo}]
-			},
-		});
-	};
-
-	/**
-	 * @param {Number} idplayerone
-	 * @param {Number} idplayertwo
-	 */
 	FightLimiter.getOrRegister = (idplayerone, idplayertwo) => {
 		const {Op} = require("sequelize");
 		if (idplayerone > idplayertwo) {
@@ -79,25 +64,6 @@ module.exports = (Sequelize, DataTypes) => {
 		});
 	};
 
-
-	/**
-	 * create a pet entity in the database
-	 * @param {Number} smallid
-	 * @param {Number} bigid
-	 * @returns {Promise<FightLimiter>}
-	 */
-	FightLimiter.createFightLimiter = (smallid, bigid) => {
-		if (smallid > bigid) {
-			let temp = smallid;
-			smallid = bigid;
-			bigid = temp;
-		}
-		return FightLimiter.build({
-			smallid: smallid,
-			bigid: bigid,
-			amount: 0,
-		});
-	};
 
 	return FightLimiter;
 };
