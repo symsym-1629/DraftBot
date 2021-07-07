@@ -45,11 +45,10 @@ module.exports = (Sequelize, DataTypes) => {
 	});
 
 	/**
-	 * @param {Number} idplayerone
-	 * @param {Number} idplayertwo
+	 * @param {String} idplayerone
+	 * @param {String} idplayertwo
 	 */
 	FightLimiter.getOrRegister = (idplayerone, idplayertwo) => {
-		const {Op} = require("sequelize");
 		if (idplayerone > idplayertwo) {
 			let temp = idplayerone;
 			idplayerone = idplayertwo;
@@ -60,6 +59,26 @@ module.exports = (Sequelize, DataTypes) => {
 			where: {
 				smallid: idplayerone,
 				bigid: idplayertwo
+			},
+		});
+	};
+
+	/**
+	 * @param {String} id
+	 */
+	FightLimiter.getforUser = (id) => {
+		const {Op} = require("sequelize");
+
+		return FightLimiter.findAll({
+			where: {
+				[Op.or]: [
+					{
+						smallid: id
+					},
+					{
+						bigid: id
+					}
+				]
 			},
 		});
 	};
