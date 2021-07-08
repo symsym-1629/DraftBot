@@ -326,16 +326,6 @@ module.exports = {
 			name: 'top',
 			func: topCommand,
 			aliases: ['t', 'rank']
-		},
-		{
-			name: 'topweek',
-			func: topWeekCommand,
-			aliases: ['topw', 'tw']
-		},
-		{
-			name: 'topserver',
-			func: topServerCommand,
-			aliases: ['topserv', 'tops', 'ts']
 		}
 	]
 };
