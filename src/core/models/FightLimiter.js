@@ -83,6 +83,16 @@ module.exports = (Sequelize, DataTypes) => {
 		});
 	};
 
+	/**
+	 * @param {String} id
+	 */
+	FightLimiter.findAllLimiters = () => {
+
+		return FightLimiter.findAll({
+
+		});
+	};
+
 
 	return FightLimiter;
 };
