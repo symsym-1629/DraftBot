@@ -105,10 +105,10 @@ const FightCommand = async function (language, message, args, friendly = false) 
 						[fightLimiter] = await FightLimiter.getOrRegister(user.id, attacker.discordUser_id);
 						console.log("nombre actuel : " + fightLimiter.amount);
 
-						if (fightLimiter.amount > 2) {
+						/*if (fightLimiter.amount > 2) {
 							await sendErrorMessage(user, message.channel, language, "Vous avez épuisé tous vos combats avec cet adversaire.");
 							return;
-						}
+						}*/
 
 						fightLimiter.amount++;
 						await fightLimiter.save();
