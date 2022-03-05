@@ -24,6 +24,7 @@ export interface DraftBotConfig {
 	MODE_MAINTENANCE: boolean;
 	NASA_API_KEY: string;
 	DROPBOX_TOKEN: string;
+	CEDILLE_API_KEY: string;
 	TEST_MODE: boolean;
 }
 

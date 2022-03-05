@@ -23,14 +23,19 @@ const TestCommand = async (message, language, args) => {
 		catch (e) {
 			return message.channel.send({ content: ":x: | Commande test " + testCommand + " inexistante : ```" + e.stack + "```" });
 		}
-		// Third, we check if the test command has the good arguments
-		const testGoodFormat = CT.isGoodFormat(commandTestCurrent, argsTest, message);
-		if (testGoodFormat[0]) {
-			// Last, we execute the test command
-			await CT.executeAndAlertUser(language, message, commandTestCurrent, argsTest);
+		// Third, we check if the test command has the good arguments, if necessary
+		if (!commandTestCurrent.commandInfo.ignoreFormat) {
+			const testGoodFormat = CT.isGoodFormat(commandTestCurrent, argsTest, message);
+			if (testGoodFormat[0]) {
+				// Last, we execute the test command
+				await CT.executeAndAlertUser(language, message, commandTestCurrent, argsTest);
+			}
+			else {
+				return message.channel.send({ embeds: [testGoodFormat[1]] });
+			}
 		}
 		else {
-			return message.channel.send({ embeds: [testGoodFormat[1]] });
+			await CT.executeAndAlertUser(language, message, commandTestCurrent, argsTest);
 		}
 	}
 };

@@ -65,8 +65,11 @@
   "//BACKUP_ARCHIVE_PASSWORD": "Zip backup archive password",
   "BACKUP_ARCHIVE_PASSWORD": "",
 
-  "//DROPBOX_TOKEN": "Ths dropbox token used to backup the database",
+  "//DROPBOX_TOKEN": "The dropbox token used to backup the database",
   "DROPBOX_TOKEN": "",
+
+  "//CEDILLE_API_KEY": "The api key for cedille.ai",
+  "CEDILLE_API_KEY": "",
 
    "//TEST_MODE": "Boolean to tell if the bot is under test mode",
   "TEST_MODE": false
