@@ -19,10 +19,10 @@ jobs:
         advices_json=$(curl -s "$advices_json_url")    
     
         # Extract advice strings    
-        advices_list=$(echo "$advices_json" | jq -r '.translations.fr.advices[]')    
+        # advices_list=$(echo "$advices_json" | jq -r '.translations.fr.advices[]')    
     
         # Get a random advice    
-        random_advice=$(echo "$advices_list" | shuf -n 1)    
+        random_advice=$(echo "$advices_json" | shuf -n 1)    
   
         # Replace {command:...} with /...  
         random_advice=$(echo "$random_advice" | sed -E 's/\{command:([^}]+)\}/\/\1/g')    
